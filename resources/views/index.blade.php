@@ -24,34 +24,28 @@
         <h3 class="text-muted">Project name</h3>
     </div>
     <ul class="nav nav-tabs wizard-menu wizard-menu">
-        <li role="presentation" class="active"><a class="wizard-item step-1-menu active" href="#" data-for=".step-1">TODO</a></li>
-        <li role="presentation"><a class="wizard-item step-2-menu" href="#" data-for=".step-2">NOTES</a></li>
+        @php($routeName = get_route_name())
+        <li role="presentation" class="{{ trim($routeName, '/') == 'todo' ? 'active' : '' }}"><a href="{{ url('todo') }}">TODO</a></li>
+        <li role="presentation" class="{{ trim($routeName, '/') == 'notes' ? 'active' : '' }}"><a href="{{ url('notes') }}">NOTES</a></li>
     </ul>
 
 
     <!-- Load content in-->
-    <div class="well wizard-content" style="border-radius: 0 0 5px 5px;">
-
-    </div>
-    <!-- Content to load-->
-    <div class="hide">
-        <div class="step-1">
-            @include('partial.todo')
-        </div>
-        <div class="step-2">
-            @include('partial.notes')
+    <div class="well" style="border-radius: 0 0 5px 5px;">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10">
+                @yield('content')
+            </div>
         </div>
     </div>
 </div>
 
-
 @yield('modal')
+@include('modal.confirmAction')
 <script src="http://www.tutorialspoint.com/bootstrap/scripts/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-
-<script src="{{ asset('js/tab-change.js') }}"></script>
 <script src="{{ asset('js/main.js') }}"></script>
 </body>
 </html>

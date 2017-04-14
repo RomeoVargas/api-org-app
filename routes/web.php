@@ -12,5 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return redirect('todo');
+});
+
+Route::get('/todo', 'TodoController@index');
+Route::get('/notes', function () {
+    return view('partial.notes');
 });

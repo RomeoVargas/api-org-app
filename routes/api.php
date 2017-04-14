@@ -13,7 +13,7 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/todo/index', 'TodoController@index');
-Route::post('/todo/add', 'TodoController@addEntry');
-Route::put('/todo/update/{id}', 'TodoController@updateEntry');
-Route::delete('/todo/delete/{id}', 'TodoController@removeEntry');
+Route::get('/todo/index', 'Api\TodoController@index');
+Route::post('/todo/add', 'Api\TodoController@addEntry');
+Route::put('/todo/update/{id}', 'Api\TodoController@updateEntry');
+Route::delete('/todo/delete/{id}', 'Api\TodoController@removeEntry');

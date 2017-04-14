@@ -8,11 +8,11 @@
             <div class="modal-body">
                 <form method="POST" action="{{ url('todo/save') }}" class="form-horizontal row">
                     <div class="col-md-offset-1 col-md-10">
-                        <div class="form-group {{ $errors->has('text') ? 'has-error' : '' }}">
+                        <div class="form-group {{ $errors->has('task') ? 'has-error' : '' }}">
                             <label class="col-sm-12 text-left">Task</label>
                             <div class="col-sm-12">
-                                <textarea class="form-control" rows="3" style="resize:none" name="text">{{ old('text') ?: $text }}</textarea>
-                                {!! $errors->first('text', "<p class='help-block'>:message</p>") !!}
+                                <textarea class="form-control" rows="3" style="resize:none" name="task">{{ old('task') ?: $task }}</textarea>
+                                {!! $errors->first('task', "<p class='help-block'>:message</p>") !!}
                             </div>
                         </div>
                         <div class="form-group">
